@@ -1,6 +1,6 @@
 import os
 
-def change_label_3_to_1_in_folder(folder_path):
+def change_label_in_folder(folder_path):
     # 폴더 내 모든 파일에 대해 처리
     for filename in os.listdir(folder_path):
         file_path = os.path.join(folder_path, filename)
@@ -11,11 +11,11 @@ def change_label_3_to_1_in_folder(folder_path):
             new_lines = []
             for line in lines:
                 parts = line.strip().split()
-                if parts[0] == '5':
+                if parts[0] == '15':
                     parts[0] = '0'
-                elif parts[0] == '7':
+                elif parts[0] == '17':
                     parts[0] = '1'
-                elif parts[0] == '9':
+                elif parts[0] == '16':
                     parts[0] = '2'
                 new_lines.append(' '.join(parts))
 
@@ -26,6 +26,6 @@ def change_label_3_to_1_in_folder(folder_path):
 
 
 # 사용 예시
-folder = '/home/ivis/yolov9/data/valid/labels'  # 라벨 파일들이 있는 폴더 경로로 변경하세요
-result = change_label_3_to_1_in_folder(folder)
+folder = '/home/ivis/yolov9/data/valid/resized_images/labels'  # 라벨 파일들이 있는 폴더 경로로 변경하세요
+result = change_label_in_folder(folder)
 print(result)
